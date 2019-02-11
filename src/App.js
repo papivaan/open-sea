@@ -11,13 +11,13 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar bg="dark" expand="lg" variant="dark">
-          <Navbar.Brand href="#home">OpenSea</Navbar.Brand>
+          <Navbar.Brand href="#home">OpenSeaAPI</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#data">Data</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown title="Options" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#track/3.1">Track a vessel</NavDropdown.Item>
                 <NavDropdown.Item href="#fleet/3.2">Fleet info</NavDropdown.Item>
                 <NavDropdown.Item href="#options/3.3">Display more</NavDropdown.Item>
@@ -26,16 +26,16 @@ class App extends Component {
               </NavDropdown>
             </Nav>
             <Form inline>
-              <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+              <FormControl type="text" placeholder="Search the open sea" className="mr-sm-2" />
               <Button variant="outline-success">Search</Button>
             </Form>
           </Navbar.Collapse>
         </Navbar>
         <Row>
           <Col>
-            <Row className="container">
-              <Col md={12} mdoffset={1}>
-                <Table striped bordered hover variant="dark">
+            <Row className="justify-content-md-center">
+              <Col md={10} mdoffset={1}>
+                <Table striped bordered hover variant="dark" className="dataTable">
                   <thead>
                     <tr>
                       <th>MMSI</th>

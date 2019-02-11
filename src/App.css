@@ -5,17 +5,14 @@
   background-color: #212529;
 }
 
-.container {
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
 .table td {
   padding: 0.25rem;
   vertical-align: center;
   white-space: pre;
+}
+
+.dataTable {
+  margin-top: 20px;
 }
 
 /* 
