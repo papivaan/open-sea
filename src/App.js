@@ -1,25 +1,50 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Row, Col, Table } from 'react-bootstrap';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Row>
+          <Col>
+            <Row>
+              <Col md={10}>
+                <h3>OpenSea</h3>
+              </Col>
+            </Row>
+            <Row className="container">
+              <Col md={10}>
+                <Table striped bordered hover>
+                  <thead>
+                    <tr>
+                      <th>LAT</th>
+                      <th>LON</th>
+                      <th>INFO</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>LAT</td>
+                      <td>LON</td>
+                      <td>INFO</td>
+                    </tr>
+                    <tr>
+                      <td>LAT</td>
+                      <td>LON</td>
+                      <td>INFO</td>
+                    </tr>
+                    <tr>
+                      <td>LAT</td>
+                      <td>LON</td>
+                      <td>INFO</td>
+                    </tr>
+                  </tbody>
+                </Table>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
       </div>
     );
   }
