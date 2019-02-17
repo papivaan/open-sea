@@ -32,7 +32,7 @@ class AddData extends Component {
   handleSave = () => {
     const { form } = this.state;
     console.log(form);
-    axios.post('', form)  
+    axios.post('/vessels', form)  
       .then(res => {
         console.log(res)
       })

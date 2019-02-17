@@ -23,7 +23,7 @@ class App extends Component {
 
   getData = () => {
     console.log('fetching data');
-    axios.get()
+    axios.get('/vessels')
       .then(res => {
         if (res.status === 200) {
           this.setState({ data: res.data });
