@@ -4,19 +4,39 @@ import { Row, Col, Table, Navbar, Nav, NavDropdown, Form, FormControl, Button } 
 
 import AddData from './components/AddData';
 import data from './data/example.json';
+import axios from './axios';
 
 class App extends Component {
   state = {
+    data: data,
     showAddDataTable: false,
+  };
+
+  componentDidMount() {
+    this.getData();
+    setInterval(this.getData, 60000); // 60000 = 1min
   };
 
   handleAddDataVisibility = value => {
     this.setState({ showAddDataTable: value });
-  }
+  };
+
+  getData = () => {
+    console.log('fetching data');
+    axios.get()
+      .then(res => {
+        if (res.status === 200) {
+          this.setState({ data: res.data });
+        }
+        console.log(res);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
 
   render() {
-    const mockData = data.concat(data).concat(data).concat(data);
-    const { showAddDataTable } = this.state;
+    const { data, showAddDataTable } = this.state;
     return (
       <div className="App">
         <Navbar bg="dark" expand="lg" variant="dark">
@@ -71,7 +91,7 @@ class App extends Component {
                       </tr>
                     </thead>
                     <tbody>
-                      {mockData.map((i, index) => (
+                      {data.map((i, index) => (
                         <tr key={index}>
                           <td>{i.MMSI}</td>
                           <td>{i.IMO}</td>

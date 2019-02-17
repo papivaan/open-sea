@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Table, Button } from 'react-bootstrap';
 
+import axios from '../axios';
 import '../App.css';
 
 const date = new Date();
@@ -31,6 +32,13 @@ class AddData extends Component {
   handleSave = () => {
     const { form } = this.state;
     console.log(form);
+    axios.post('', form)  
+      .then(res => {
+        console.log(res)
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 
   render () {
