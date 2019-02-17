@@ -14,7 +14,7 @@ class App extends Component {
 
   componentDidMount() {
     this.getData();
-    setInterval(this.getData, 60000); // 60000 = 1min
+    setInterval(this.getData, 30000); // 30000 ms = 30 s = 0.5 m
   };
 
   handleAddDataVisibility = value => {
